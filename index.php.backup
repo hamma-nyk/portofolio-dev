@@ -1,0 +1,565 @@
+<?php
+// === 1. KONFIGURASI DATA ===
+$namaSaya = "イコ";
+$username = "@ikonyek"; 
+$tags = ['laravel', 'codeigniter', 'whatsapp-bot', 'baileys', 'javascript', 'tailwind'];
+$profilPic = "assets/img/xnxx.png"; 
+$profilBg = "assets/img/profile-bg.png"; 
+$musicBg = "assets/img/music-bg.jpg"; 
+
+// === DATA PLAYLIST LAGU (Update: Masukkan file m4a di sini) ===
+// Gambar album akan statis untuk semua lagu, atau Anda bisa menambahkannya di dalam array $tracks jika ingin berbeda tiap lagu.
+$albumArtGlobal = 'https://via.placeholder.com/300/161b22/c9d1d9?text=Album+Art';
+
+$tracks = [
+    [
+        'num' => '1', 
+        'title' => 'End of Beginning', 
+        'artist' => 'Djo', // (Dikoreksi artis aslinya)
+        'duration' => '02:39',
+		'img' => 'assets/img/1.png',
+        'src' => 'https://res.cloudinary.com/dki6lb44f/video/upload/v1774881719/Djo_-_End_Of_Beginning_Official_Audio_fl9u2m.mp3' // Path file m4a Anda
+    ],
+    [
+        'num' => '2', 
+        'title' => 'The Night We Met', 
+        'artist' => 'Lord Huron', 
+        'duration' => '03:29',
+		'img' => 'assets/img/2.jpg',
+        'src' => 'https://res.cloudinary.com/dki6lb44f/video/upload/v1774880438/Lord_Huron_-_The_Night_We_Met_Official_Audio_tma1sr.mp3' // Ganti dengan file asli Anda
+    ],
+    [
+        'num' => '3', 
+        'title' => 'My Love Mine All Mine', 
+        'artist' => 'Mitski', 
+        'duration' => '02:50',
+		'img' => 'assets/img/3.jpg',
+        'src' => 'https://res.cloudinary.com/dki6lb44f/video/upload/v1774881457/Mitski_-_My_Love_Mine_All_Mine_Official_Lyric_Video_hle4wp.mp3' // Ganti dengan file asli Anda
+    ],
+	[
+        'num' => '4', 
+        'title' => 'Those Eyes', 
+        'artist' => 'New West', 
+        'duration' => '03:41',
+		'img' => 'assets/img/4.jpg',
+        'src' => 'https://res.cloudinary.com/dki6lb44f/video/upload/v1774882069/New_West_-_Those_Eyes_q4vhaf.mp3' // Ganti dengan file asli Anda
+    ],
+	[
+        'num' => '5', 
+        'title' => 'Beanie', 
+        'artist' => 'Chezile', 
+        'duration' => '02:20',
+		'img' => 'assets/img/5.jpg',
+        'src' => 'https://res.cloudinary.com/dki6lb44f/video/upload/v1774882001/Chezile_-_Beanie_Official_Visualizer_k2adgf.mp3' // Ganti dengan file asli Anda
+    ],
+];
+
+// === DATA PROYEK ===
+$projects = [
+    [
+        'title' => 'konekobot',
+        'visibility' => 'Public',
+        'desc' => 'Simple WhatsApp BOT with beautiful features.',
+        'screenshot' => 'assets/img/konekobot.png', 
+		'bg' => 'assets/img/konekobot-bg.jpg',
+        'github_link' => '', 
+        'website_link' => 'https://konekobot.vercel.app', 
+        'lang' => 'JavaScript',
+        'lang_color' => 'bg-yellow-400', 
+        'stars' => 24,
+        'forks' => 5
+    ],
+	
+    [
+        'title' => 'asia-assistant',
+        'visibility' => 'Private',
+        'desc' => 'AI Portofolio backend of ikonyek.vercel.app',
+        'screenshot' => 'assets/img/asiaassistant.png', 
+		'bg' => 'assets/img/asiaassistant-bg.png',
+        'github_link' => '', 
+        'website_link' => 'https://portofolio-ai.onrender.com', 
+        'lang' => 'Python',
+        'lang_color' => 'bg-indigo-400', 
+        'stars' => 12,
+        'forks' => 2
+    ],
+	[
+        'title' => 'ram-flusher-plus',
+        'visibility' => 'Public',
+        'desc' => 'Force stop user/system android apps & flush RAM cache.',
+        'screenshot' => 'assets/img/ram.png', 
+		'bg' => 'assets/img/ram-bg.jpg',
+        'github_link' => '', 
+        'website_link' => 'https://lletter.vercel.app', 
+        'lang' => 'C',
+        'lang_color' => 'bg-red-400', 
+        'stars' => 12,
+        'forks' => 2
+    ],
+	[
+        'title' => 'english-word-suggest',
+        'visibility' => 'Public',
+        'desc' => 'Support for English word completion games.',
+        'screenshot' => 'assets/img/lletter.png', 
+		'bg' => 'assets/img/lletter-bg.jpg',
+        'github_link' => '', 
+        'website_link' => 'https://lletter.vercel.app', 
+        'lang' => 'JavaScript',
+        'lang_color' => 'bg-yellow-400',
+        'stars' => 12,
+        'forks' => 2
+    ]
+];
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $username; ?> (<?php echo $namaSaya; ?>)</title>
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gh_bg: '#0d1117',
+                        gh_card: '#161b22',
+                        gh_border: '#30363d',
+                        gh_text: '#c9d1d9',
+                        gh_muted: '#8b949e',
+                        gh_blue: '#58a6ff',
+                        gh_green: '#238636',
+                        gh_green_text: '#3fb950',
+                        gh_hover: '#1f242c',
+                        gh_modal_header: '#1c2128'
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Helvetica', 'Arial', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .profile-noise { filter: grayscale(0.5) contrast(1.1); }
+        .aurora-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #0d1117; overflow: hidden; z-index: -1; }
+        .aurora-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.25; animation: floatBlob 20s infinite alternate ease-in-out; }
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: rgba(88, 166, 255, 0.4); animation-duration: 25s; }
+        .blob-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: rgba(63, 185, 80, 0.3); animation-delay: -5s; animation-duration: 30s; }
+        .blob-3 { top: 30%; left: 40%; width: 45vw; height: 45vw; background: rgba(137, 87, 229, 0.3); animation-delay: -10s; animation-duration: 28s; }
+        @keyframes floatBlob { 0% { transform: translate(0, 0) scale(1); } 33% { transform: translate(5%, 10%) scale(1.1); } 66% { transform: translate(-5%, -5%) scale(0.9); } 100% { transform: translate(10%, -10%) scale(1.05); } }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1117; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8b949e; }
+        
+        /* Highlight indikator lagu aktif di playlist */
+        .track-active { background-color: #1f242c; border-left: 3px solid #3fb950; }
+        .track-active .track-title { color: #58a6ff; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-gh_bg text-gh_text font-sans antialiased relative min-h-screen">
+
+    <div class="aurora-bg">
+        <div class="aurora-blob blob-1"></div>
+        <div class="aurora-blob blob-2"></div>
+        <div class="aurora-blob blob-3"></div>
+    </div>
+
+    <div class="container mx-auto max-w-7xl p-8 space-y-8 relative z-10 flex flex-col items-center">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+            
+            <div class="bg-gh_card/90 backdrop-blur-xl p-8 rounded-2xl border border-gh_border shadow-lg relative overflow-hidden">
+    
+				<div class="absolute inset-x-0 top-0 h-48 z-0 pointer-events-none">
+					<img src="<?php echo $profilBg; ?>" alt="Cover" class="w-full h-full object-cover opacity-60">
+					
+					<div class="absolute inset-0 bg-gradient-to-b from-transparent via-gh_card/40 to-gh_card/90"></div>
+				</div>
+
+				<div class="relative z-10">
+					
+					<div class="absolute top-0 right-0 flex items-center gap-2 bg-gh_bg/80 backdrop-blur-md px-3 py-1 rounded-full border border-gh_border shadow-sm">
+						<div class="w-2.5 h-2.5 bg-gh_green_text rounded-full animate-pulse border border-green-200/20"></div>
+						<span class="text-gh_muted text-xs font-medium">Focusing</span>
+					</div>
+					
+					<div class="flex justify-center mb-6 mt-8">
+						<img src="<?php echo $profilPic; ?>" alt="Profile" class="w-40 h-40 rounded-full object-cover border-4 border-gh_card shadow-xl profile-noise">
+					</div>
+					
+					<div class="text-center mb-6">
+						<h1 class="text-3xl font-bold text-white drop-shadow-md"><?php echo $namaSaya; ?></h1>
+						<p class="text-gh_muted text-xl font-light mt-1"><?php echo $username; ?></p>
+					</div>
+					
+					<div class="flex flex-wrap gap-2 justify-center">
+						<?php 
+						// 1. Siapkan palet warna (kombinasi text, bg transparan, border, dan hover)
+						$tagColors = [
+							'text-blue-400 bg-blue-400/10 border-blue-400/20 hover:bg-blue-400/20',
+							'text-emerald-400 bg-emerald-400/10 border-emerald-400/20 hover:bg-emerald-400/20',
+							'text-purple-400 bg-purple-400/10 border-purple-400/20 hover:bg-purple-400/20',
+							'text-amber-400 bg-amber-400/10 border-amber-400/20 hover:bg-amber-400/20',
+							'text-rose-400 bg-rose-400/10 border-rose-400/20 hover:bg-rose-400/20',
+							'text-cyan-400 bg-cyan-400/10 border-cyan-400/20 hover:bg-cyan-400/20'
+						];
+						
+						// 2. Looping dengan index untuk mengambil warna secara bergantian
+						foreach ($tags as $index => $tag): 
+							// Logika modulus: mengulang warna dari awal jika jumlah tag lebih banyak dari jumlah warna
+							$colorClass = $tagColors[$index % count($tagColors)];
+						?>
+						<span class="<?php echo $colorClass; ?> transition text-xs px-2.5 py-1 rounded-full font-medium cursor-pointer backdrop-blur-sm border">
+							<?php echo $tag; ?>
+						</span>
+						<?php endforeach; ?>
+					</div>
+
+				</div>
+			</div>
+
+            <div class="bg-gh_card/80 backdrop-blur-xl p-8 rounded-2xl border border-gh_border shadow-lg relative flex flex-col h-full">
+                <div class="flex justify-between items-center pb-3 mb-5 border-b border-white/10 relative z-20">
+    
+					<div class="flex items-center gap-2">
+						<i class="ri-disc-line text-gh_blue animate-spin" style="animation-duration: 4s;"></i>
+						
+						<span class="text-[10px] text-white font-mono font-bold tracking-[0.2em] uppercase mt-0.5">
+							SIMPLE PLAYLIST
+						</span>
+					</div>
+
+					<button class="text-gh_muted hover:text-white transition focus:outline-none">
+						<i class="ri-more-2-fill text-lg drop-shadow-md"></i>
+					</button>
+					
+				</div>
+
+				<div class="relative flex flex-col mb-auto overflow-hidden rounded-xl border border-gh_border/40 p-5 shadow-inner">
+					
+					<div class="absolute inset-0 z-0 pointer-events-none">
+						<img id="player-bg" src="<?php echo $musicBg; ?>" alt="Player Background" class="w-full h-full object-cover opacity-30 blur-[1px]">
+						
+						<div class="absolute inset-0 bg-gradient-to-t from-gh_card via-gh_card/80 to-transparent"></div>
+					</div>
+
+					<div class="relative z-10 w-full flex flex-col">
+						
+						<div class="flex items-start gap-5 mb-6 justify-start">
+							<img id="player-album" src="<?php echo $tracks[0]['img']; ?>" alt="Album" class="w-20 h-20 rounded-md border border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.5)] flex-shrink-0">
+							<div class="text-left max-w-[150px] sm:max-w-[200px]">
+								<h3 id="player-title" class="text-xl font-bold text-white drop-shadow-md truncate"><?php echo $tracks[0]['title']; ?></h3>
+								<p id="player-artist" class="text-gh_muted text-sm font-medium drop-shadow-md truncate"><?php echo $tracks[0]['artist']; ?></p>
+							</div>
+						</div>
+						
+						<div class="flex justify-center items-center gap-6 mb-5">
+    
+							<button id="prev-btn" class="text-gh_text hover:text-white transition drop-shadow-md focus:outline-none">
+								<i class="ri-skip-back-mini-fill text-2xl"></i>
+							</button>
+							
+							<button id="play-btn" class="w-12 h-12 rounded-full bg-gh_green border border-green-500/30 text-white flex items-center justify-center hover:bg-green-500 transition-all shadow-[0_0_15px_rgba(35,134,54,0.4)] focus:outline-none">
+								<i id="icon-play" class="ri-play-fill text-2xl ml-1"></i>
+								<i id="icon-pause" class="ri-pause-fill text-2xl hidden"></i>
+							</button>
+							
+							<button id="next-btn" class="text-gh_text hover:text-white transition drop-shadow-md focus:outline-none">
+								<i class="ri-skip-forward-mini-fill text-2xl"></i>
+							</button>
+							
+						</div>
+						
+						<div class="w-full bg-black/40 rounded-full h-1.5 relative border border-white/5 cursor-pointer shadow-inner" id="progress-container">
+							<div id="progress-bar" class="bg-gh_green_text h-1.5 rounded-full shadow-[0_0_8px_rgba(63,185,80,0.6)]" style="width: 0%"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<audio id="audio-player" src="<?php echo $musicTrack['src']; ?>" preload="metadata"></audio>
+
+                <div class="space-y-1 mt-2 pt-4 border-gh_border overflow-y-auto max-h-[182px] custom-scrollbar pr-2" id="playlist-container">
+					<?php foreach ($tracks as $index => $track): ?>
+					<div onclick="playTrack(<?php echo $index; ?>)" class="playlist-item flex justify-between items-center p-2 rounded-md hover:bg-gh_hover transition cursor-pointer border-l-3 border-transparent" data-index="<?php echo $index; ?>">
+						<div class="flex items-center gap-3">
+							 <span class="text-gh_muted text-xs font-mono w-4"><?php echo $track['num']; ?></span>
+							 <div>
+								 <p class="track-title text-gh_text text-sm transition-colors"><?php echo $track['title']; ?></p>
+								 <p class="text-gh_muted text-xs"><?php echo $track['artist']; ?></p>
+							 </div>
+						</div>
+						<span class="text-gh_muted text-xs font-mono"><?php echo $track['duration']; ?></span>
+					</div>
+					<?php endforeach; ?>
+				</div>
+
+            </div>
+        </div>
+
+        <div class="w-full max-w-4xl">
+            <div class="flex items-center gap-3 mb-6 mt-2 relative z-20">
+				
+				<h3 class="text-xl font-bold text-white tracking-wide drop-shadow-md">
+					Featured Projects
+				</h3>
+				
+				<div class="flex-grow h-px bg-gradient-to-r from-gh_border via-gh_border/50 to-transparent ml-4"></div>
+				
+			</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+				<?php foreach ($projects as $index => $project): ?>
+				
+				<div onclick="openModal(<?php echo $index; ?>)" class="bg-gh_card/90 backdrop-blur-xl p-5 rounded-xl border border-gh_border hover:border-gh_muted transition duration-300 flex flex-col h-full relative overflow-hidden group cursor-pointer shadow-md hover:shadow-lg">
+					
+					<div class="absolute inset-y-0 right-0 w-3/4 z-0 pointer-events-none opacity-20 group-hover:opacity-25 transition-opacity duration-500">
+						<img src="<?php echo $project['bg']; ?>" alt="Project BG" class="w-full h-full object-cover">
+						
+						<div class="absolute inset-0 bg-gradient-to-r from-gh_card via-gh_card/80 to-transparent"></div>
+					</div>
+
+					<div class="relative z-10 flex flex-col h-full">
+						
+						<div class="flex items-center gap-2 mb-2">
+							<i class="ri-book-mark-line text-gh_muted text-sm"></i>
+							
+							<span class="text-sm font-semibold text-gh_blue group-hover:underline break-all">
+								<?php echo $project['title']; ?>
+							</span>
+							
+							<span class="text-[10px] text-gh_muted border border-gh_border rounded-full px-2 py-0.5 ml-auto font-medium bg-gh_bg/50 backdrop-blur-sm">
+								<?php echo $project['visibility']; ?>
+							</span>
+						</div>
+
+						<p class="text-gh_muted text-xs mt-1 mb-5 flex-grow leading-relaxed line-clamp-2 drop-shadow-sm">
+							<?php echo $project['desc']; ?>
+						</p>
+
+						<div class="flex items-center gap-4 text-xs text-gh_muted mt-auto pt-2">
+							<div class="flex items-center gap-1.5">
+								<span class="w-3 h-3 rounded-full <?php echo $project['lang_color']; ?> border border-white/10 shadow-sm"></span>
+								<span class="font-medium drop-shadow-md text-white/80"><?php echo $project['lang']; ?></span>
+							</div>
+							
+							<span class="flex items-center gap-1 hover:text-gh_blue transition">
+								<i class="ri-star-line text-sm"></i>
+								<span class="drop-shadow-md"><?php echo $project['stars']; ?></span>
+							</span>
+							
+							<span class="flex items-center gap-1 hover:text-gh_blue transition">
+								<i class="ri-git-branch-line text-sm"></i>
+								<span class="drop-shadow-md"><?php echo $project['forks']; ?></span>
+							</span>
+						</div>
+
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</div>
+        </div>
+    </div>
+
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex-col items-center justify-center bg-gh_bg/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div id="modal-content" class="bg-gh_card border border-gh_border rounded-xl shadow-2xl w-full max-w-2xl transform scale-95 transition-all duration-300 flex flex-col overflow-hidden max-h-[90vh]">
+            <div class="flex justify-between items-center px-5 py-4 border-b border-gh_border bg-gh_modal_header">
+                <h3 id="modal-title" class="text-lg font-semibold text-gh_text flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gh_muted" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+                    Nama Proyek
+                </h3>
+                <button onclick="closeModal()" class="text-gh_muted hover:text-white transition focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-5 overflow-y-auto custom-scrollbar">
+                <div class="mb-5 border border-gh_border rounded-lg overflow-hidden bg-gh_bg">
+                    <img id="modal-image" src="" alt="Screenshot Proyek" class="w-full h-auto object-cover max-h-[300px]">
+                </div>
+                <p id="modal-desc" class="text-gh_text text-sm mb-6 leading-relaxed"></p>
+                <div class="flex flex-wrap gap-3">
+                    <a id="modal-github" href="#" target="_blank" class="hidden items-center gap-2 bg-[#238636] hover:bg-[#2ea043] text-white px-4 py-2 rounded-md text-sm font-semibold transition border border-[rgba(240,246,252,0.1)]">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                    <a id="modal-website" href="#" target="_blank" class="hidden items-center gap-2 bg-[#21262d] hover:bg-[#30363d] text-gh_text px-4 py-2 rounded-md text-sm font-semibold transition border border-gh_border">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        Visit Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logika Modal Proyek
+        const projectData = <?php echo json_encode($projects); ?>;
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal(index) {
+            const data = projectData[index];
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-desc').innerText = data.desc;
+            document.getElementById('modal-image').src = data.screenshot;
+
+            const btnGithub = document.getElementById('modal-github');
+            if(data.github_link !== '') {
+                btnGithub.href = data.github_link;
+                btnGithub.style.display = 'inline-flex';
+            } else { btnGithub.style.display = 'none'; }
+
+            const btnWeb = document.getElementById('modal-website');
+            if(data.website_link !== '') {
+                btnWeb.href = data.website_link;
+                btnWeb.style.display = 'inline-flex';
+            } else { btnWeb.style.display = 'none'; }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+
+        // === LOGIKA MUSIC PLAYER & PLAYLIST ===
+        const playlistTracks = <?php echo json_encode($tracks); ?>; // Transfer array PHP ke JS
+        let currentTrackIndex = 0; // Mulai dari lagu pertama (Index 0)
+
+        const audio = document.getElementById('audio-player');
+        const playBtn = document.getElementById('play-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const iconPlay = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+		const album = document.getElementById('player-album');
+		
+        const playerTitle = document.getElementById('player-title');
+        const playerArtist = document.getElementById('player-artist');
+        
+        // Inisialisasi lagu pertama saat halaman dimuat
+        function initPlayer() {
+            if(playlistTracks.length > 0) {
+                loadTrack(currentTrackIndex);
+            }
+        }
+
+        // Fungsi untuk memuat data lagu ke player (tanpa langsung memutar)
+        function loadTrack(index) {
+            const track = playlistTracks[index];
+            audio.src = track.src;
+            playerTitle.innerText = track.title;
+            playerArtist.innerText = track.artist;
+			album.src = track.img;
+            updateActivePlaylistStyling(index);
+        }
+
+        // Fungsi utama untuk memutar lagu (dipanggil saat tombol di playlist diklik)
+        function playTrack(index) {
+            currentTrackIndex = index;
+            loadTrack(currentTrackIndex);
+            audio.play();
+            updatePlayIcon(true);
+        }
+
+        // Beri style ke lagu yang sedang aktif di daftar bawah
+        function updateActivePlaylistStyling(activeIndex) {
+            const items = document.querySelectorAll('.playlist-item');
+            items.forEach((item, index) => {
+                if (index === activeIndex) {
+                    item.classList.add('track-active');
+                } else {
+                    item.classList.remove('track-active');
+                }
+            });
+        }
+
+        // Fungsi ganti icon
+        function updatePlayIcon(isPlaying) {
+            if (isPlaying) {
+                iconPlay.classList.add('hidden');
+                iconPause.classList.remove('hidden');
+            } else {
+                iconPlay.classList.remove('hidden');
+                iconPause.classList.add('hidden');
+            }
+        }
+
+        // Event Tombol Play/Pause Utama
+        playBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                updatePlayIcon(true);
+            } else {
+                audio.pause();
+                updatePlayIcon(false);
+            }
+        });
+
+        // Event Tombol Next
+        nextBtn.addEventListener('click', function() {
+            currentTrackIndex++;
+            if (currentTrackIndex > playlistTracks.length - 1) {
+                currentTrackIndex = 0; // Kembali ke awal jika sudah di akhir
+            }
+            playTrack(currentTrackIndex);
+        });
+
+        // Event Tombol Prev
+        prevBtn.addEventListener('click', function() {
+            currentTrackIndex--;
+            if (currentTrackIndex < 0) {
+                currentTrackIndex = playlistTracks.length - 1; // Ke lagu terakhir jika mundur dari awal
+            }
+            playTrack(currentTrackIndex);
+        });
+
+        // Update Progress Bar saat lagu jalan
+        audio.addEventListener('timeupdate', function() {
+            if(audio.duration) { // Hindari NaN error
+                const percentage = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = percentage + '%';
+            }
+        });
+
+        // Bisa klik progress bar untuk mempercepat lagu (Seek)
+        progressContainer.addEventListener('click', function(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        });
+
+        // OTO-PLAY NEXT: Pindah lagu otomatis saat selesai
+        audio.addEventListener('ended', function() {
+            nextBtn.click(); // Simulasikan klik tombol next
+        });
+
+        // Jalankan inisialisasi
+        initPlayer();
+    </script>
+</body>
+</html>
