@@ -7,7 +7,7 @@
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
-    />
+      />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -51,186 +51,132 @@
     </script>
     <style>
       .profile-noise {
-        filter: grayscale(0.5) contrast(1.1);
+      filter: grayscale(0.5) contrast(1.1);
       }
       .aurora-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #0d1117;
-        overflow: hidden;
-        z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0d1117;
+      overflow: hidden;
+      z-index: -1;
       }
       .aurora-blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(120px);
-        opacity: 0.25;
-        animation: floatBlob 20s infinite alternate ease-in-out;
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.25;
+      animation: floatBlob 20s infinite alternate ease-in-out;
       }
       .blob-1 {
-        top: -10%;
-        left: -10%;
-        width: 50vw;
-        height: 50vw;
-        background: rgba(88, 166, 255, 0.4);
-        animation-duration: 25s;
+      top: -10%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      background: rgba(88, 166, 255, 0.4);
+      animation-duration: 25s;
       }
       .blob-2 {
-        bottom: -20%;
-        right: -10%;
-        width: 60vw;
-        height: 60vw;
-        background: rgba(63, 185, 80, 0.3);
-        animation-delay: -5s;
-        animation-duration: 30s;
+      bottom: -20%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      background: rgba(63, 185, 80, 0.3);
+      animation-delay: -5s;
+      animation-duration: 30s;
       }
       .blob-3 {
-        top: 30%;
-        left: 40%;
-        width: 45vw;
-        height: 45vw;
-        background: rgba(137, 87, 229, 0.3);
-        animation-delay: -10s;
-        animation-duration: 28s;
+      top: 30%;
+      left: 40%;
+      width: 45vw;
+      height: 45vw;
+      background: rgba(137, 87, 229, 0.3);
+      animation-delay: -10s;
+      animation-duration: 28s;
       }
       @keyframes floatBlob {
-        0% {
-          transform: translate(0, 0) scale(1);
-        }
-        33% {
-          transform: translate(5%, 10%) scale(1.1);
-        }
-        66% {
-          transform: translate(-5%, -5%) scale(0.9);
-        }
-        100% {
-          transform: translate(10%, -10%) scale(1.05);
-        }
+      0% {
+      transform: translate(0, 0) scale(1);
       }
-
+      33% {
+      transform: translate(5%, 10%) scale(1.1);
+      }
+      66% {
+      transform: translate(-5%, -5%) scale(0.9);
+      }
+      100% {
+      transform: translate(10%, -10%) scale(1.05);
+      }
+      }
       ::-webkit-scrollbar {
-        width: 8px;
+      width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #0d1117;
+      background: #0d1117;
       }
       ::-webkit-scrollbar-thumb {
-        background: #30363d;
-        border-radius: 4px;
+      background: #30363d;
+      border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #8b949e;
+      background: #8b949e;
       }
-
       .track-active {
-        background-color: #1f242c;
-        border-left: 3px solid #3fb950;
+      background-color: #1f242c;
+      border-left: 3px solid #3fb950;
       }
       .track-active .track-title {
-        color: #58a6ff;
-        font-weight: 600;
+      color: #58a6ff;
+      font-weight: 600;
       }
     </style>
   </head>
   <body
     class="bg-gh_bg text-gh_text font-sans antialiased relative min-h-screen"
-  >
+    >
     <div class="aurora-bg">
       <div class="aurora-blob blob-1"></div>
       <div class="aurora-blob blob-2"></div>
       <div class="aurora-blob blob-3"></div>
     </div>
-
-    <div
-      class="container mx-auto max-w-7xl p-8 space-y-8 relative z-10 flex flex-col items-center"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
-        <div
-          class="bg-gh_card/90 backdrop-blur-xl p-8 rounded-2xl border border-gh_border shadow-lg relative overflow-hidden"
-        >
-          <div class="absolute inset-x-0 top-0 h-48 z-0 pointer-events-none">
-            <img
-              src="assets/img/profile-bg.png"
-              alt="Cover"
-              class="w-full h-full object-cover opacity-60"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-b from-transparent via-gh_card/40 to-gh_card/90"
-            ></div>
+    <div class="container mx-auto max-w-full p-4 lg:p-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-3 space-y-6">
+        <div class="bg-gh_card/90 backdrop-blur-xl p-6 rounded-2xl border border-gh_border shadow-lg relative overflow-hidden">
+          <div class="absolute inset-x-0 top-0 h-32 z-0 pointer-events-none">
+            <img src="assets/img/profile-bg.png" class="w-full h-full object-cover opacity-40" />
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gh_card"></div>
           </div>
-
-          <div class="relative z-10">
-            <div
-              class="absolute top-[-30px] right-0 flex items-center gap-2 bg-gh_bg/80 backdrop-blur-md px-3 py-1 rounded-full border border-gh_border shadow-sm"
-            >
-              <div
-                class="w-2.5 h-2.5 bg-gh_green_text rounded-full animate-pulse border border-green-200/20"
-              ></div>
-              <span class="text-gh_muted text-xs font-medium">Focusing</span>
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="flex justify-center mb-4 mt-4">
+              <img src="assets/img/xnxx.png" class="w-24 h-24 rounded-full object-cover border-4 border-gh_card shadow-xl profile-noise" />
             </div>
-
-            <div class="flex justify-center mb-6 mt-8">
-              <img
-                src="assets/img/xnxx.png"
-                alt="Profile"
-                class="w-40 h-40 rounded-full object-cover border-4 border-gh_card shadow-xl profile-noise"
-              />
+            <div class="text-center mb-4">
+              <h1 class="text-xl font-bold text-white">イコ</h1>
+              <p class="text-gh_muted text-sm italic">@hamma-nyk</p>
             </div>
-
-            <div class="text-center mb-6">
-              <h1 class="text-3xl font-bold text-white drop-shadow-md">イコ</h1>
-              <p class="text-gh_muted text-xl font-light mt-1">@hamma-nyk</p>
-            </div>
-
-            <div
-              id="tags-container"
-              class="flex flex-wrap gap-2 justify-center"
-            ></div>
+            <div id="tags-container" class="flex flex-wrap gap-1.5 justify-center"></div>
           </div>
         </div>
-
-        <div
-          class="bg-gh_card/80 backdrop-blur-xl p-8 rounded-2xl border border-gh_border shadow-lg relative flex flex-col h-full"
-        >
-          <div
-            class="flex justify-between items-center pb-3 mb-5 border-b border-white/10 relative z-20"
-          >
-            <div class="flex items-center gap-2">
-              <i
-                class="ri-disc-line text-gh_blue animate-spin"
-                style="animation-duration: 4s"
-              ></i>
-              <span
-                class="text-[10px] text-white font-mono font-bold tracking-[0.2em] uppercase mt-0.5"
-              >
-                SIMPLE PLAYLIST
-              </span>
-            </div>
-            <button
-              class="text-gh_muted hover:text-white transition focus:outline-none"
-            >
-              <i class="ri-more-2-fill text-lg drop-shadow-md"></i>
-            </button>
+        <div class="bg-gh_card/80 backdrop-blur-xl p-5 rounded-2xl border border-gh_border shadow-lg flex flex-col">
+          <div class="flex justify-between items-center pb-2 mb-4 border-b border-white/10">
+            <span class="text-[9px] text-gh_blue font-bold tracking-widest uppercase">SIMPLE PLAYLIST</span>
+            <i class="ri-disc-line text-gh_blue animate-spin text-sm"></i>
           </div>
-
-          <div
-            class="relative flex flex-col mb-auto overflow-hidden rounded-xl border border-gh_border/40 p-5 shadow-inner"
-          >
+          <div class="relative overflow-hidden rounded-xl border border-gh_border/40 p-4 mb-4">
             <div class="absolute inset-0 z-0 pointer-events-none">
               <img
                 id="player-bg"
                 src="assets/img/music-bg.jpg"
                 alt="Player Background"
                 class="w-full h-full object-cover opacity-30 blur-[1px]"
-              />
+                />
               <div
                 class="absolute inset-0 bg-gradient-to-t from-gh_card via-gh_card/80 to-transparent"
-              ></div>
+                ></div>
             </div>
-
             <div class="relative z-10 w-full flex flex-col">
               <div class="flex items-start gap-5 mb-6 justify-start">
                 <img
@@ -238,156 +184,146 @@
                   src=""
                   alt="Album"
                   class="w-20 h-20 rounded-md border border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.5)] flex-shrink-0 object-cover"
-                />
+                  />
                 <div class="text-left max-w-[150px] sm:max-w-[200px]">
                   <h3
                     id="player-title"
                     class="text-xl font-bold text-white drop-shadow-md truncate"
-                  >
+                    >
                     Loading...
                   </h3>
                   <p
                     id="player-artist"
                     class="text-gh_muted text-sm font-medium drop-shadow-md truncate"
-                  >
+                    >
                     Please wait
                   </p>
                 </div>
               </div>
-
               <div class="flex justify-center items-center gap-6 mb-5">
                 <button
                   id="prev-btn"
                   class="text-gh_text hover:text-white transition drop-shadow-md focus:outline-none"
-                >
-                  <i class="ri-skip-back-mini-fill text-2xl"></i>
+                  >
+                <i class="ri-skip-back-mini-fill text-2xl"></i>
                 </button>
                 <button
                   id="play-btn"
                   class="w-12 h-12 rounded-full bg-gh_green border border-green-500/30 text-white flex items-center justify-center hover:bg-green-500 transition-all shadow-[0_0_15px_rgba(35,134,54,0.4)] focus:outline-none"
-                >
-                  <i id="icon-play" class="ri-play-fill text-2xl ml-1"></i>
-                  <i id="icon-pause" class="ri-pause-fill text-2xl hidden"></i>
+                  >
+                <i id="icon-play" class="ri-play-fill text-2xl ml-1"></i>
+                <i id="icon-pause" class="ri-pause-fill text-2xl hidden"></i>
                 </button>
                 <button
                   id="next-btn"
                   class="text-gh_text hover:text-white transition drop-shadow-md focus:outline-none"
-                >
-                  <i class="ri-skip-forward-mini-fill text-2xl"></i>
+                  >
+                <i class="ri-skip-forward-mini-fill text-2xl"></i>
                 </button>
               </div>
-
               <div
                 class="w-full bg-black/40 rounded-full h-1.5 relative border border-white/5 cursor-pointer shadow-inner"
                 id="progress-container"
-              >
+                >
                 <div
                   id="progress-bar"
                   class="bg-gh_green_text h-1.5 rounded-full shadow-[0_0_8px_rgba(63,185,80,0.6)]"
                   style="width: 0%"
-                ></div>
+                  ></div>
               </div>
             </div>
           </div>
-
+          <div id="playlist-container" class="space-y-1 overflow-y-auto max-h-[150px] custom-scrollbar pr-1 text-xs"></div>
           <audio id="audio-player" src="" preload="metadata"></audio>
-
-          <div
-            id="playlist-container"
-            class="space-y-1 mt-2 pt-4 border-gh_border overflow-y-auto max-h-[182px] custom-scrollbar pr-2"
-          ></div>
         </div>
       </div>
-
-      <div class="w-full max-w-4xl">
-        <div class="flex items-center gap-3 mb-6 mt-2 relative z-20">
-          <h3 class="text-xl font-bold text-white tracking-wide drop-shadow-md">
-            Featured Projects
-          </h3>
-          <div
-            class="flex-grow h-px bg-gradient-to-r from-gh_border via-gh_border/50 to-transparent ml-4"
-          ></div>
+      <div class="lg:col-span-4 space-y-4">
+        <div class="lg:flex items-center gap-2 mb-2">
+          <h3 class="text-sm font-bold text-gh_muted uppercase tracking-tighter">Featured Projects</h3>
+          <div class="flex-grow h-px bg-gh_border/30"></div>
         </div>
-
-        <div
-          id="projects-container"
-          class="grid grid-cols-1 sm:grid-cols-2 gap-4"
-        ></div>
+        <div id="projects-container-1" class="space-y-4"></div>
+      </div>
+      <div class="lg:col-span-5 mt-[-8px] lg:mt-0 lg:space-y-4">
+        <div class="hidden lg:flex items-center gap-2 mb-2">
+          <h3 class="text-sm font-bold text-gh_muted uppercase tracking-tighter">More Projects</h3>
+          <div class="flex-grow h-px bg-gh_border/30"></div>
+        </div>
+        <div id="projects-container-2" class="space-y-4"></div>
       </div>
     </div>
-
     <div
       id="project-modal"
       class="fixed inset-0 z-50 hidden flex-col items-center justify-center bg-gh_bg/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300"
-    >
+      >
       <div
         id="modal-content"
         class="bg-gh_card border border-gh_border rounded-xl shadow-2xl w-full max-w-2xl transform scale-95 transition-all duration-300 flex flex-col overflow-hidden max-h-[90vh]"
-      >
+        >
         <div
           class="flex justify-between items-center px-5 py-4 border-b border-gh_border bg-gh_modal_header"
-        >
+          >
           <h3
             id="modal-title"
             class="text-lg font-semibold text-gh_text flex items-center gap-2"
-          >
+            >
             <svg
               class="w-4 h-4 text-gh_muted"
               fill="currentColor"
               viewBox="0 0 16 16"
-            >
+              >
               <path
                 fill-rule="evenodd"
                 d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
-              ></path>
+                ></path>
             </svg>
             Nama Proyek
           </h3>
           <button
             onclick="closeModal()"
             class="text-gh_muted hover:text-white transition focus:outline-none"
-          >
+            >
             <svg
               class="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-            >
+              >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M6 18L18 6M6 6l12 12"
-              ></path>
+                ></path>
             </svg>
           </button>
         </div>
         <div class="p-5 overflow-y-auto custom-scrollbar">
           <div
             class="mb-5 border border-gh_border rounded-lg overflow-hidden bg-gh_bg"
-          >
+            >
             <img
               id="modal-image"
               src=""
               alt="Screenshot Proyek"
               class="w-full h-auto object-cover max-h-[300px]"
-            />
+              />
           </div>
           <p
             id="modal-desc"
             class="text-gh_text text-sm mb-6 leading-relaxed"
-          ></p>
+            ></p>
           <div class="flex flex-wrap gap-3">
             <a
               id="modal-github"
               href="#"
               target="_blank"
               class="hidden items-center gap-2 bg-[#238636] hover:bg-[#2ea043] text-white px-4 py-2 rounded-md text-sm font-semibold transition border border-[rgba(240,246,252,0.1)]"
-            >
+              >
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                />
+                  />
               </svg>
               View on GitHub
             </a>
@@ -396,19 +332,19 @@
               href="#"
               target="_blank"
               class="hidden items-center gap-2 bg-[#21262d] hover:bg-[#30363d] text-gh_text px-4 py-2 rounded-md text-sm font-semibold transition border border-gh_border"
-            >
+              >
               <svg
                 class="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 stroke-width="2"
-              >
+                >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                ></path>
+                  ></path>
               </svg>
               Visit Website
             </a>
@@ -416,7 +352,6 @@
         </div>
       </div>
     </div>
-
     <script>
       // 1. DATA TAGS KEAHLIAN
       const myTags = [
@@ -427,7 +362,7 @@
         "javascript",
         "tailwind",
       ];
-
+      
       // Palet Warna Tags
       const tagColors = [
         "text-blue-400 bg-blue-400/10 border-blue-400/20 hover:bg-blue-400/20",
@@ -437,7 +372,7 @@
         "text-rose-400 bg-rose-400/10 border-rose-400/20 hover:bg-rose-400/20",
         "text-cyan-400 bg-cyan-400/10 border-cyan-400/20 hover:bg-cyan-400/20",
       ];
-
+      
       // 2. DATA PLAYLIST LAGU
       const playlistTracks = [
         {
@@ -481,7 +416,7 @@
           src: "https://res.cloudinary.com/dki6lb44f/video/upload/v1774882001/Chezile_-_Beanie_Official_Visualizer_k2adgf.mp3",
         },
       ];
-
+      
       // 3. DATA PROYEK
       const projectData = [
         {
@@ -563,79 +498,80 @@
           forks: 2,
         },
       ];
-
+      
       // === FUNGSI RENDER HTML DINAMIS ===
       function renderHTML() {
-        // Render Tags
-        const tagsContainer = document.getElementById("tags-container");
-        myTags.forEach((tag, index) => {
-          const colorClass = tagColors[index % tagColors.length];
-          tagsContainer.innerHTML += `<span class="${colorClass} transition text-xs px-2.5 py-1 rounded-full font-medium cursor-pointer backdrop-blur-sm border">${tag}</span>`;
-        });
-
-        // Render Playlist
-        const playlistContainer = document.getElementById("playlist-container");
-        playlistTracks.forEach((track, index) => {
-          playlistContainer.innerHTML += `
-                    <div onclick="playTrack(${index})" class="playlist-item flex justify-between items-center p-2 rounded-md hover:bg-gh_hover transition cursor-pointer border-l-3 border-transparent" data-index="${index}">
-                        <div class="flex items-center gap-3">
-                             <span class="text-gh_muted text-xs font-mono w-4">${track.num}</span>
-                             <div>
-                                 <p class="track-title text-gh_text text-sm transition-colors">${track.title}</p>
-                                 <p class="text-gh_muted text-xs">${track.artist}</p>
-                             </div>
-                        </div>
-                        <span class="text-gh_muted text-xs font-mono">${track.duration}</span>
-                    </div>
-                `;
-        });
-
-        // Render Projects
-        const projectsContainer = document.getElementById("projects-container");
-        projectData.forEach((project, index) => {
-          projectsContainer.innerHTML += `
-                    <div onclick="openModal(${index})" class="bg-gh_card/90 backdrop-blur-xl p-5 rounded-xl border border-gh_border hover:border-gh_muted transition duration-300 flex flex-col h-full relative overflow-hidden group cursor-pointer shadow-md hover:shadow-lg">
-                        <div class="absolute inset-y-0 right-0 w-3/4 z-0 pointer-events-none opacity-20 group-hover:opacity-25 transition-opacity duration-500">
-                            <img src="${project.bg}" alt="Project BG" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-r from-gh_card via-gh_card/80 to-transparent"></div>
-                        </div>
-                        <div class="relative z-10 flex flex-col h-full">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="ri-book-mark-line text-gh_muted text-sm"></i>
-                                <span class="text-sm font-semibold text-gh_blue group-hover:underline break-all">${project.title}</span>
-                                <span class="text-[10px] text-gh_muted border border-gh_border rounded-full px-2 py-0.5 ml-auto font-medium bg-gh_bg/50 backdrop-blur-sm">${project.visibility}</span>
-                            </div>
-                            <p class="text-gh_muted text-xs mt-1 mb-5 flex-grow leading-relaxed line-clamp-2 drop-shadow-sm">${project.desc}</p>
-                            <div class="flex items-center gap-4 text-xs text-gh_muted mt-auto pt-2">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-3 h-3 rounded-full ${project.lang_color} border border-white/10 shadow-sm"></span>
-                                    <span class="font-medium drop-shadow-md text-white/80">${project.lang}</span>
-                                </div>
-                                <span class="flex items-center gap-1 hover:text-gh_blue transition">
-                                    <i class="ri-star-line text-sm"></i>
-                                    <span class="drop-shadow-md">${project.stars}</span>
-                                </span>
-                                <span class="flex items-center gap-1 hover:text-gh_blue transition">
-                                    <i class="ri-git-branch-line text-sm"></i>
-                                    <span class="drop-shadow-md">${project.forks}</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-        });
+      // Render Tags
+      const tagsContainer = document.getElementById("tags-container");
+      myTags.forEach((tag, index) => {
+      const colorClass = tagColors[index % tagColors.length];
+      tagsContainer.innerHTML += `<span class="${colorClass} transition text-[10px] px-2 py-0.5 rounded-full font-medium border">${tag}</span>`;
+      });
+      
+      // Render Playlist
+      const playlistContainer = document.getElementById("playlist-container");
+      playlistTracks.forEach((track, index) => {
+      playlistContainer.innerHTML += `
+      <div onclick="playTrack(${index})" class="playlist-item flex justify-between items-center p-2 rounded-md hover:bg-gh_hover transition cursor-pointer" data-index="${index}">
+          <div class="flex items-center gap-2">
+               <span class="text-gh_muted text-[10px] font-mono w-3">${track.num}</span>
+               <div class="truncate max-w-[120px]">
+                   <p class="track-title text-gh_text text-[11px] truncate">${track.title}</p>
+                   <p class="text-gh_muted text-[9px] truncate">${track.artist}</p>
+               </div>
+          </div>
+          <span class="text-gh_muted text-[10px] font-mono">${track.duration}</span>
+      </div>`;
+      });
+      
+      // Render Projects - Dibagi menjadi 2 kolom (Ganjil Genap)
+      const container1 = document.getElementById("projects-container-1");
+      const container2 = document.getElementById("projects-container-2");
+      
+      projectData.forEach((project, index) => {
+      const html = `
+      <div onclick="openModal(${index})" class="bg-gh_card/90 backdrop-blur-xl p-5 rounded-xl border border-gh_border hover:border-gh_muted transition duration-300 flex flex-col h-full relative overflow-hidden group cursor-pointer shadow-md">
+          <div class="absolute inset-y-0 right-0 w-3/4 z-0 pointer-events-none opacity-10 group-hover:opacity-20 transition-opacity">
+              <img src="${project.bg}" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-r from-gh_card via-gh_card/80 to-transparent"></div>
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
+              <div class="flex items-center gap-2 mb-2">
+                  <i class="ri-book-mark-line text-gh_muted text-sm"></i>
+                  <span class="text-sm font-semibold text-gh_blue group-hover:underline break-all">${project.title}</span>
+                  <span class="text-[9px] text-gh_muted border border-gh_border rounded-full px-1.5 py-0.5 ml-auto font-medium">${project.visibility}</span>
+              </div>
+              <p class="text-gh_muted text-xs mb-4 line-clamp-2">${project.desc}</p>
+              <div class="flex items-center gap-3 text-[10px] text-gh_muted mt-auto pt-2">
+                  <div class="flex items-center gap-1">
+                      <span class="w-2 h-2 rounded-full ${project.lang_color}"></span>
+                      <span>${project.lang}</span>
+                  </div>
+                  <span class="flex items-center gap-1"><i class="ri-star-line"></i>${project.stars}</span>
+                  <span class="flex items-center gap-1"><i class="ri-git-branch-line"></i>${project.forks}</span>
+              </div>
+          </div>
+      </div>`;
+      
+      // Pembagian kolom: index genap ke kiri, ganjil ke kanan
+      if (index % 2 === 0) {
+      container1.innerHTML += html;
+      } else {
+      container2.innerHTML += html;
       }
-
+      });
+      }
+      
       // === LOGIKA MODAL ===
       const modal = document.getElementById("project-modal");
       const modalContent = document.getElementById("modal-content");
-
+      
       function openModal(index) {
         const data = projectData[index];
         document.getElementById("modal-title").innerText = data.title;
         document.getElementById("modal-desc").innerText = data.desc;
         document.getElementById("modal-image").src = data.screenshot;
-
+      
         const btnGithub = document.getElementById("modal-github");
         if (data.github_link !== "") {
           btnGithub.href = data.github_link;
@@ -643,7 +579,7 @@
         } else {
           btnGithub.style.display = "none";
         }
-
+      
         const btnWeb = document.getElementById("modal-website");
         if (data.website_link !== "") {
           btnWeb.href = data.website_link;
@@ -651,7 +587,7 @@
         } else {
           btnWeb.style.display = "none";
         }
-
+      
         modal.classList.remove("hidden");
         modal.classList.add("flex");
         setTimeout(() => {
@@ -660,7 +596,7 @@
           modalContent.classList.add("scale-100");
         }, 10);
       }
-
+      
       function closeModal() {
         modal.classList.add("opacity-0");
         modalContent.classList.remove("scale-100");
@@ -670,7 +606,7 @@
           modal.classList.remove("flex");
         }, 300);
       }
-
+      
       modal.addEventListener("click", function (e) {
         if (e.target === modal) closeModal();
       });
@@ -678,7 +614,7 @@
         if (e.key === "Escape" && !modal.classList.contains("hidden"))
           closeModal();
       });
-
+      
       // === LOGIKA MUSIC PLAYER ===
       let currentTrackIndex = 0;
       const audio = document.getElementById("audio-player");
@@ -693,13 +629,13 @@
       const playerBg = document.getElementById("player-bg");
       const playerTitle = document.getElementById("player-title");
       const playerArtist = document.getElementById("player-artist");
-
+      
       function initPlayer() {
         if (playlistTracks.length > 0) {
           loadTrack(currentTrackIndex);
         }
       }
-
+      
       function loadTrack(index) {
         const track = playlistTracks[index];
         audio.src = track.src;
@@ -709,14 +645,14 @@
         if (playerBg) playerBg.src = track.img;
         updateActivePlaylistStyling(index);
       }
-
+      
       function playTrack(index) {
         currentTrackIndex = index;
         loadTrack(currentTrackIndex);
         audio.play();
         updatePlayIcon(true);
       }
-
+      
       function updateActivePlaylistStyling(activeIndex) {
         const items = document.querySelectorAll(".playlist-item");
         items.forEach((item, index) => {
@@ -727,7 +663,7 @@
           }
         });
       }
-
+      
       function updatePlayIcon(isPlaying) {
         if (isPlaying) {
           iconPlay.classList.add("hidden");
@@ -737,7 +673,7 @@
           iconPause.classList.add("hidden");
         }
       }
-
+      
       playBtn.addEventListener("click", function () {
         if (audio.paused) {
           audio.play();
@@ -747,39 +683,39 @@
           updatePlayIcon(false);
         }
       });
-
+      
       nextBtn.addEventListener("click", function () {
         currentTrackIndex++;
         if (currentTrackIndex > playlistTracks.length - 1)
           currentTrackIndex = 0;
         playTrack(currentTrackIndex);
       });
-
+      
       prevBtn.addEventListener("click", function () {
         currentTrackIndex--;
         if (currentTrackIndex < 0)
           currentTrackIndex = playlistTracks.length - 1;
         playTrack(currentTrackIndex);
       });
-
+      
       audio.addEventListener("timeupdate", function () {
         if (audio.duration) {
           const percentage = (audio.currentTime / audio.duration) * 100;
           progressBar.style.width = percentage + "%";
         }
       });
-
+      
       progressContainer.addEventListener("click", function (e) {
         const width = this.clientWidth;
         const clickX = e.offsetX;
         const duration = audio.duration;
         audio.currentTime = (clickX / width) * duration;
       });
-
+      
       audio.addEventListener("ended", function () {
         nextBtn.click();
       });
-
+      
       // === START APLIKASI ===
       // 1. Generate HTML dari Data JS
       renderHTML();
