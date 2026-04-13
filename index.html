@@ -143,7 +143,7 @@
     </div>
     <div class="container mx-auto max-w-full p-4 lg:p-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <div class="lg:col-span-3 space-y-6">
+      <div class="lg:col-span-4 space-y-6">
         <div class="bg-gh_card/90 backdrop-blur-xl p-6 rounded-2xl border border-gh_border shadow-lg relative overflow-hidden">
           <div class="absolute inset-x-0 top-0 h-32 z-0 pointer-events-none">
             <img src="assets/img/profile-bg.png" class="w-full h-full object-cover opacity-40" />
@@ -244,7 +244,7 @@
         </div>
         <div id="projects-container-1" class="space-y-4"></div>
       </div>
-      <div class="lg:col-span-5 mt-[-8px] lg:mt-0 lg:space-y-4">
+      <div class="lg:col-span-4 mt-[-8px] lg:mt-0 lg:space-y-4">
         <div class="hidden lg:flex items-center gap-2 mb-2">
           <h3 class="text-sm font-bold text-gh_muted uppercase tracking-tighter">More Projects</h3>
           <div class="flex-grow h-px bg-gh_border/30"></div>
@@ -497,6 +497,32 @@
           stars: 12,
           forks: 2,
         },
+        {
+          title: "eiko-yt2mp3",
+          visibility: "Public",
+          desc: "Youtube to mp3 converter",
+          screenshot: "assets/img/eiko.png",
+          bg: "assets/img/eiko-bg.jpg",
+          github_link: "",
+          website_link: "https://eiko-yt2mp3.vercel.app",
+          lang: "JavaScript",
+          lang_color: "bg-yellow-400",
+          stars: 12,
+          forks: 2,
+        },
+        {
+          title: "tsuyu-brat",
+          visibility: "Public",
+          desc: "Brat image enerator",
+          screenshot: "assets/img/tsuyu.png",
+          bg: "assets/img/tsuyu-bg.jpg",
+          github_link: "",
+          website_link: "https://tsuyu-brat.vercel.app",
+          lang: "JavaScript",
+          lang_color: "bg-yellow-400",
+          stars: 12,
+          forks: 2,
+        },
       ];
       
       // === FUNGSI RENDER HTML DINAMIS ===
@@ -531,7 +557,7 @@
       projectData.forEach((project, index) => {
       const html = `
       <div onclick="openModal(${index})" class="bg-gh_card/90 backdrop-blur-xl p-5 rounded-xl border border-gh_border hover:border-gh_muted transition duration-300 flex flex-col h-full relative overflow-hidden group cursor-pointer shadow-md">
-          <div class="absolute inset-y-0 right-0 w-3/4 z-0 pointer-events-none opacity-10 group-hover:opacity-20 transition-opacity">
+          <div class="absolute inset-y-0 right-0 w-3/4 z-0 pointer-events-none opacity-15 group-hover:opacity-25 transition-opacity">
               <img src="${project.bg}" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-r from-gh_card via-gh_card/80 to-transparent"></div>
           </div>
